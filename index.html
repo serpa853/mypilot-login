@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área Protegida</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('auth') !== 'serpa853') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <h1>🎉 Bem-vindo ao Painel Secreto!</h1>
+  <p>Você está logado com sucesso.</p>
+
+  <button onclick="logout()">Sair</button>
+
+  <script>
+    function logout() {
+      localStorage.removeItem('auth');
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
